@@ -1,0 +1,106 @@
+\usepackage{calc}
+\usepackage{varwidth}
+
+\usetikzlibrary{intersections}
+
+% Title page
+\defbeamertemplate*{title page}{uob}[1][]
+{ 
+    \begin{tikzpicture}[remember picture, overlay]
+
+        \fill[backgroundcolor] (current page.south west) rectangle (current page.north east);
+
+        \newlength{\mymargin}
+        \setlength{\mymargin}{0.5cm}
+
+        % Image height is 1373
+        % Height of red is ~940
+        % Ratio is therefore ~0.68
+        \newlength{\myimageheight}
+        \setlength{\myimageheight}{1.46\mymargin}
+        
+        \newlength{\myheight}
+        \setlength{\myheight}{\paperheight - 2\mymargin}
+        
+        \newlength{\mywidth}
+        \setlength{\mywidth}{\paperwidth - 2\mymargin}
+
+        \begin{scope}[shift={(current page.south west)}, xshift=\mymargin, yshift=\mymargin]
+
+            % Guides
+            % \draw [orange, line width=1pt] (0,0) -- (0,\myheight);
+            % \draw [orange, line width=1pt] (0.33\mywidth,0) -- (0.33\mywidth,\myheight);
+            % \draw [orange, line width=1pt] (0.67\mywidth,0) -- (0.67\mywidth,\myheight);
+            % \draw [orange, line width=1pt] (\mywidth,0) -- (\mywidth,\myheight);
+
+            % \draw [orange, line width=1pt] (0,0) -- (\mywidth,0);
+            % \draw [orange, line width=1pt] (0,0.33\myheight) -- (\mywidth,0.33\myheight);
+            % \draw [orange, line width=1pt] (0,0.67\myheight) -- (\mywidth,0.67\myheight);
+            % \draw [orange, line width=1pt] (0,\myheight) -- (\mywidth,\myheight);
+
+            % Lines of intent
+            \coordinate (center) at (\mywidth, 0.33\myheight);
+
+            \node (logo) at (0,0) [
+                anchor=south west,
+                inner ysep=0em,
+                inner xsep=0.5cm,
+                xshift=-0.5cm,
+                outer sep=0pt,
+            ] {
+            	\ifuob@dark
+                	\includegraphics[height=\myimageheight]{template/logos/UoB_dark.png}
+               	\else
+               		\includegraphics[height=\myimageheight]{template/logos/UoB_light.png}
+               	\fi
+            };
+
+            \node (author) at (0, 0.33\myheight) [
+                anchor=north west,
+                color=foregroundcolor,
+                font=\fontsize{12}{14}\selectfont, 
+                text width=0.67\mywidth, 
+                inner xsep=0em,
+                inner ysep=0.5em,
+                align=left,
+            ] {
+                \insertauthor
+            };
+            
+            \node (title) at (author.north west) [
+                anchor=south west,
+                color=foregroundcolor,
+                font=\fontsize{24}{28}\selectfont,
+                align=left,
+                inner ysep=0.5em,
+                inner xsep=0.5cm,
+                xshift=-0.5cm,
+            ] {
+                \begin{varwidth}{0.67\mywidth}
+                    \raggedright
+                    \hyphenpenalty=10000
+                    \exhyphenpenalty=10000
+                    \titlefont \inserttitle
+                \end{varwidth}
+            };
+
+            \coordinate (c1) at (0.88\mywidth, \myheight);
+            \coordinate (c2) at (0.67\mywidth, 0.67\myheight);
+            \coordinate (c3) at (0.33\mywidth, 0);
+            \coordinate (c4) at (0.77\mywidth, 0);
+
+            \draw [foregroundcolor, line width=1pt] (center) -- (c1);
+            \draw [foregroundcolor, line width=1pt] (center) -- (title);
+            \draw [foregroundcolor, line width=1pt] (center) -- (logo);
+            \draw [foregroundcolor, line width=1pt] (center) -- (c4);
+            
+        \end{scope}
+    
+    \end{tikzpicture}
+}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{items}[square]
+\setbeamertemplate{section in toc}[square]
+\setbeamertemplate{subsection in toc}[default]

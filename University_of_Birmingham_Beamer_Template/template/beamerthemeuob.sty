@@ -1,0 +1,26 @@
+% Required packages
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage[T1]{fontenc}
+
+% Add light / dark mode toggle
+\newif\ifuob@dark
+\uob@darktrue % default: dark
+
+\DeclareOptionBeamer{dark}{\uob@darktrue}
+\DeclareOptionBeamer{light}{\uob@darkfalse}
+\ProcessOptionsBeamer
+
+% Settings
+\useinnertheme{uob}
+\useoutertheme{uob}
+\usecolortheme{uob}
+\usefonttheme{uob}
+
+\AtBeginSection[]
+{%
+    \begin{frame}
+        \frametitle{Outline}
+        \tableofcontents[currentsection]
+    \end{frame}
+}%

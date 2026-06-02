@@ -1,0 +1,29 @@
+# ─── Proprietary GCI / Company A dataset — must NOT be published ───
+Final Assignment/telecom/
+*.docx
+
+# ─── Provided course materials (not my own work) ───
+Final Assignment/tutorial.ipynb
+final_assignment_tutorial.pdf
+University_of_Birmingham_Beamer_Template.zip
+\[We can do much better than this\] Sample Slides from Past Outstanding Students/
+
+# ─── Caches / build junk ───
+__pycache__/
+*.pyc
+catboost_info/
+.DS_Store
+.venv/
+.ipynb_checkpoints/
+
+# ─── LaTeX build artifacts (keep .tex and .pdf) ───
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.fls
+*.fdb_latexmk
+*.synctex.gz

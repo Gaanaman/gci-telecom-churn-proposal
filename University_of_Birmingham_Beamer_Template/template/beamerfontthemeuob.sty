@@ -1,0 +1,27 @@
+\RequirePackage{fontspec}
+    \defaultfontfeatures{RawFeature={+axis={wght=200}}}
+    \setsansfont{Manrope.ttf}[
+        Path = template/fonts/,
+        BoldFont={Manrope.ttf},
+        BoldFeatures={RawFeature={+axis={wght=600}}},
+    ]
+    \newfontfamily\titlefont{Marcellus.ttf}[
+        Path = template/fonts/,
+        BoldFont={Marcellus.ttf},
+    ]
+
+\RequirePackage{unicode-math}
+    % Reference the OTF by filename so it resolves via kpathsea even when the
+    % system font cache does not index TeX Live's fonts by their display name.
+    \setmathfont[math-style=ISO,bold-style=ISO]{texgyrepagella-math.otf}
+
+\setbeamerfont{title}{size=\Large, series=\bfseries, family=\titlefont}
+\setbeamerfont{frametitle}{family=\titlefont, series=\bfseries}
+\setbeamerfont{subtitle}{family=\titlefont, series=\mdseries}
+\setbeamerfont{block title}{family=\titlefont}
+\setbeamerfont{section}{family=\titlefont}
+\setbeamerfont{subsection}{family=\titlefont}
+\setbeamerfont{author}{family=\rmfamily}
+\setbeamerfont{date}{family=\rmfamily}
+\setbeamerfont{institute}{family=\rmfamily}
+\setbeamerfont{normal text}{family=\rmfamily}

@@ -1,0 +1,20 @@
+data: (100000, 99), churn=0.4956
+  >> A. baseline XGBoost (label-encoded, no FE)     OOF AUC=0.6972  acc=0.6409
+     [11s]
+  >> B. CatBoost native cats (no FE)                OOF AUC=0.6962  acc=0.6402
+     [191s]
+  >> C. CatBoost + engineered features              OOF AUC=0.7041  acc=0.6475
+     [180s]
+  >> D. CatBoost + FE + fold-safe target encoding   OOF AUC=0.7044  acc=0.6456
+     [183s]
+  >>    (member) XGBoost+FE                         OOF AUC=0.7056  acc=0.6475
+  >>    (member) HistGB+FE                          OOF AUC=0.7026  acc=0.6453
+  >> E. ENSEMBLE rank-blend (Cat+XGB+HGB)           OOF AUC=0.7066  acc=0.6482
+     [53s]
+
+SUMMARY
+  A baseline       AUC=0.6972  (Δ vs baseline +0.0000)
+  B catboost       AUC=0.6962  (Δ vs baseline -0.0010)
+  C +FE            AUC=0.7041  (Δ vs baseline +0.0070)
+  D +target-enc    AUC=0.7044  (Δ vs baseline +0.0072)
+  E ensemble       AUC=0.7066  (Δ vs baseline +0.0095)

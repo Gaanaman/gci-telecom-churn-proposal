@@ -1,0 +1,62 @@
+\mode<presentation>
+
+% University of Birmingham palette (hex values provided in HTML format)
+\definecolor{white}{HTML}{FAFAFA}      % Light white
+\definecolor{black}{HTML}{1B1B1B}      % Dark black
+\definecolor{yellow}{HTML}{C59A00}     % Gold (primary)
+\definecolor{lightyellow}{HTML}{DAC064} % Soft gold
+\definecolor{grey}{HTML}{3C3C3B}       % Grey
+\definecolor{red}{HTML}{E30513}        % Bright red (alert)
+\definecolor{lightred}{HTML}{EA4F58}   % Soft red
+\definecolor{blue}{HTML}{2581C4}       % University blue
+\definecolor{lightblue}{HTML}{65A6D5}  % Soft blue
+
+% Define color mode variables
+\ifuob@dark
+	\colorlet{foregroundcolor}{white}
+	\colorlet{backgroundcolor}{black}
+	\colorlet{highlightcolor}{yellow}
+\else
+	\colorlet{foregroundcolor}{black}
+	\colorlet{backgroundcolor}{white}
+	\colorlet{highlightcolor}{black}
+\fi
+
+% Title Page
+\setbeamercolor{title page header}{fg=foregroundcolor}    % Text for title page header
+\setbeamercolor{author}{fg=foregroundcolor}               % Text for author name
+\setbeamercolor{background canvas}{bg=backgroundcolor}    % Background for the entire presentation
+\setbeamercolor{normal text}{fg=foregroundcolor}          % Text for normal content
+
+% Header and Footer
+\setbeamercolor{headline}{fg=yellow, bg=black} % Yellow text on black header
+\setbeamercolor{footline}{fg=yellow, bg=red}   % Yellow text on red footer
+
+% Frames
+\setbeamercolor{frametitle}{fg=foregroundcolor, bg=backgroundcolor} % Foreground text on background frame title
+
+% Blocks
+\setbeamercolor{block title}{fg=black, bg=yellow}       % Black text on yellow block title
+\setbeamercolor{block body}{fg=black, bg=lightyellow}   % Black text on light yellow block body
+
+\setbeamercolor{block title alerted}{fg=black, bg=red}      % Black text on red alert block title
+\setbeamercolor{block body alerted}{fg=black, bg=lightred}  % Black text on light red alert block body
+
+\setbeamercolor{block title example}{fg=black, bg=blue}     % Black text on blue example block title
+\setbeamercolor{block body example}{fg=black, bg=lightblue} % Black text on light blue example block body
+
+% Lists and Items
+\setbeamercolor{item}{fg=yellow}       % Yellow for list items
+\setbeamercolor{alerted text}{fg=yellow} % Yellow for alerted text
+
+% Captions
+\setbeamercolor{caption name}{fg=highlightcolor} % Yellow text for caption names
+
+% Table of Contents
+\setbeamercolor{section in toc}{fg=highlightcolor}    % Highlight section titles in TOC
+\setbeamercolor{subsection in toc}{fg=highlightcolor} % Highlight subsection titles in TOC
+
+% Uncomment the following lines if needed for sidebar or head/foot sections
+% \setbeamercolor{sidebar}{fg=highlightcolor, bg=backgroundcolor}
+% \setbeamercolor{section in head/foot}{fg=foregroundcolor, bg=backgroundcolor}
+% \setbeamercolor{subsection in head/foot}{fg=foregroundcolor, bg=backgroundcolor}

@@ -1,0 +1,57 @@
+\documentclass[aspectratio=169]{beamer}
+
+\makeatletter
+\def\input@path{{template/}}
+\makeatother
+
+% Switch between dark and light mode:
+% \usetheme[dark]{uob} (default)
+% \usetheme[light]{uob}
+\usetheme[dark]{uob}
+
+\usepackage{booktabs}
+
+\title{University of Birmingham Beamer Template}
+\date{\today}
+\author{Joseph Chamberlain}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{You can declare sections like this.}
+
+\begin{frame}{Blocks make things stand out.}
+    \begin{block}{Block}
+        This is the default block. It uses the University's preferred yellow colours. 
+    \end{block}
+    
+    \begin{alertblock}{Alert Block}
+        This is an alert block. It uses the University's red colours.
+    \end{alertblock}
+    
+    \begin{examples}
+        This is for examples. It uses the University's blue colours.
+    \end{examples}
+\end{frame}
+
+\begin{frame}{You can put maths in.}
+    \begin{equation}
+        a^2 = \alpha^2 + c^2
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Figures look rather nice.}
+    \begin{figure}
+        \centering
+        % Comment / uncomment the appropriate logo for the color theme
+        \includegraphics[width=0.5\linewidth]{template/logos/UoB_dark.png}
+        %\includegraphics[width=0.5\linewidth]{template/logos/UoB_light.png}
+        \caption{Caption}
+        \label{fig:enter-label}
+    \end{figure}
+\end{frame}
+
+\end{document}

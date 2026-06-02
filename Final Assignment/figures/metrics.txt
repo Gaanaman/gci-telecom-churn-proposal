@@ -1,0 +1,20 @@
+Model comparison - honest 5-fold out-of-fold predictions (all 100,000 customers)
+model                                  acc     AUC    prec     rec      F1
+Logistic Regression                 0.5959  0.6327  0.5948  0.5793  0.5870
+XGBoost (baseline, no features)     0.6409  0.6972  0.6345  0.6497  0.6420
+XGBoost + features                  0.6475  0.7056  0.6443  0.6448  0.6446
+CatBoost + features                 0.6475  0.7041  0.6429  0.6497  0.6463
+HistGradientBoosting + features     0.6453  0.7026  0.6417  0.6437  0.6427
+Ensemble (final)                    0.6484  0.7064  0.6437  0.6510  0.6473
+
+Improvement: baseline 0.6972 -> ensemble 0.7064 (+0.0092 AUC)
+
+Top 8 churn drivers (XGBoost gain; * = engineered):
+  eqpdays           0.0440
+  months            0.0399
+  refurb_new        0.0348
+  usage_momentum    0.0285 *
+  hnd_price         0.0224
+  asl_flag          0.0166
+  eqp_per_tenure    0.0157 *
+  avgqty            0.0154
